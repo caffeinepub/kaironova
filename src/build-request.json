@@ -1,0 +1,159 @@
+{
+  "kind": "build_request",
+  "title": "Create KairoNova AI Chatbot Website (branding + landing + demo chat)",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a coherent KairoNova brand identity across the website, including a consistent visual theme (colors, typography, spacing, and component styling) suitable for a premium AI chatbot brand; avoid blue/purple as primary colors.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "No ur wish create website alone"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All pages share a consistent theme (color palette, typography, and layout rules).",
+        "Primary theme does not rely on blue/purple as the main brand colors.",
+        "Site looks intentional and polished on both mobile and desktop."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement a public Landing page for the KairoNova chatbot brand that clearly presents: product name “KairoNova”, tagline, brief description, and creator attribution “Developed by Kairav”, with calls-to-action that navigate to the Chat experience.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2",
+          "msg-3",
+          "msg-4",
+          "msg-5"
+        ],
+        "quotes": [
+          "Give a ai beatiful website name chat bot that is like a chatgpt develoed by kairav",
+          "KairoNova",
+          "No ur wish create website alone"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Landing page displays “KairoNova” prominently.",
+        "Landing page includes visible text “Developed by Kairav”.",
+        "A clear “Start Chat” (or equivalent) CTA navigates to the chat screen."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Implement a Chat page that provides a ChatGPT-like UI (message list, user input box, send button, loading indicator) and supports an on-chain demo chatbot response flow without using any external AI/LLM APIs (e.g., simple rules-based responses, canned replies, or scripted behaviors).",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2",
+          "msg-5"
+        ],
+        "quotes": [
+          "Give a ai beatiful website name chat bot that is like a chatgpt develoed by kairav",
+          "No ur wish create website alone"
+        ]
+      },
+      "acceptanceCriteria": [
+        "User can enter a message and see it appear in the conversation timeline.",
+        "App produces a bot response for each user message without calling external AI services.",
+        "UI shows a loading/typing state while generating the bot reply.",
+        "Conversation remains usable after multiple turns (at least 10 messages)."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Add basic informational pages and navigation: About (describing KairoNova and attribution to Kairav), and Privacy/Disclaimer (stating this is a demo chatbot experience and does not provide professional advice).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2",
+          "msg-5"
+        ],
+        "quotes": [
+          "Give a ai beatiful website name chat bot that is like a chatgpt develoed by kairav",
+          "No ur wish create website alone"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Top-level navigation (or footer links) provides access to Landing, Chat, About, and Privacy/Disclaimer.",
+        "About page includes “Developed by Kairav”.",
+        "Privacy/Disclaimer page is reachable and readable on mobile."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Implement backend persistence in the single Motoko actor to store and retrieve chat sessions/messages for the current user/device context (simple session model is acceptable), and expose canister methods consumed by the frontend via the existing actor hook pattern.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "No ur wish create website alone"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend exposes methods to append a message and fetch conversation history.",
+        "Frontend can load prior messages from the backend on page load/refresh for the current session model.",
+        "All Motoko logic remains within the single main actor file (no extra backend services)."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Use React Query for chat data flow (loading history, sending messages, receiving bot replies) with appropriate loading/error UI states so the chat remains responsive and failures are visible to the user.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "No ur wish create website alone"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Chat history query has loading and error states.",
+        "Send message action is implemented as a mutation with optimistic or clearly staged UI updates.",
+        "Errors are presented in the UI in English (no silent failures)."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Add basic SEO/accessibility essentials: meaningful page titles, semantic headings, and keyboard-accessible chat input controls.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "No ur wish create website alone"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Each page sets a sensible document/page title including “KairoNova”.",
+        "Chat input can be focused and submitted via keyboard.",
+        "Primary headings use semantic h1/h2 structure."
+      ]
+    }
+  ],
+  "constraints": [
+    "Use English for any user-facing text.",
+    "Do not edit any files under frontend/src/components/ui or any paths listed as immutable in SYSTEM_CONTEXT.",
+    "Backend must remain a single Motoko actor (all logic in backend/main.mo).",
+    "Do not integrate external AI/LLM services or third-party auth providers (Internet Identity only if later requested)."
+  ],
+  "nonGoals": [
+    "Implementing a real ChatGPT/LLM backend or connecting to OpenAI/Anthropic/other AI services.",
+    "Real-time chat via WebSockets.",
+    "Payments/subscriptions.",
+    "Social login providers beyond Internet Identity."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

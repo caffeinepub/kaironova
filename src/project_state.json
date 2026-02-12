@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Build a website for an AI chatbot brand named KairoNova (ChatGPT-like) developed by Kairav.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-coherent-kaironova-brand-identity-across-the-website-including-a-consistent-visual-theme-colors-typography-spacing-and-component-styling-suitable-for-a-premium-ai-chatbot-brand-avoid-blue-purple-as-primary-colors",
+      "title": "Create a coherent KairoNova brand identity across the website, including a consistent visual theme (colors, typography, spacing, and component styling) suitable for a premium AI chatbot brand; avoid blue/purple as primary colors.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-public-landing-page-for-the-kaironova-chatbot-brand-that-clearly-presents-product-name-kaironova-tagline-brief-description-and-creator-attribution-developed-by-kairav-with-calls-to-action-that-navigate-to-the-chat-experience",
+      "title": "Implement a public Landing page for the KairoNova chatbot brand that clearly presents: product name “KairoNova”, tagline, brief description, and creator attribution “Developed by Kairav”, with calls-to-action that navigate to the Chat experience.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-chat-page-that-provides-a-chatgpt-like-ui-message-list-user-input-box-send-button-loading-indicator-and-supports-an-on-chain-demo-chatbot-response-flow-without-using-any-external-ai-llm-apis-e-g-simple-rules-based-responses-canned-replies-or-scripted-behaviors",
+      "title": "Implement a Chat page that provides a ChatGPT-like UI (message list, user input box, send button, loading indicator) and supports an on-chain demo chatbot response flow without using any external AI/LLM APIs (e.g., simple rules-based responses, canned replies, or scripted behaviors).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-basic-informational-pages-and-navigation-about-describing-kaironova-and-attribution-to-kairav-and-privacy-disclaimer-stating-this-is-a-demo-chatbot-experience-and-does-not-provide-professional-advice",
+      "title": "Add basic informational pages and navigation: About (describing KairoNova and attribution to Kairav), and Privacy/Disclaimer (stating this is a demo chatbot experience and does not provide professional advice).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-use-react-query-for-chat-data-flow-loading-history-sending-messages-receiving-bot-replies-with-appropriate-loading-error-ui-states-so-the-chat-remains-responsive-and-failures-are-visible-to-the-user",
+      "title": "Use React Query for chat data flow (loading history, sending messages, receiving bot replies) with appropriate loading/error UI states so the chat remains responsive and failures are visible to the user.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-basic-seo-accessibility-essentials-meaningful-page-titles-semantic-headings-and-keyboard-accessible-chat-input-controls",
+      "title": "Add basic SEO/accessibility essentials: meaningful page titles, semantic headings, and keyboard-accessible chat input controls.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create the KairoNova AI chatbot website (branding + site pages)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Implement backend persistence in the single Motoko actor to store and retrieve chat sessions/messages for the current user/device context (simple session model is acceptable), and expose canister methods consumed by the frontend via the existing actor hook pattern.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "KairoNova",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

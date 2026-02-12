@@ -1,0 +1,14 @@
+{
+  "frontend/src/index.css": "Global styles with emerald/teal OKLCH color system for premium KairoNova brand, including light and dark mode tokens with custom animations.",
+  "frontend/tailwind.config.js": "Tailwind configuration with Inter font family, custom shadows (soft, glow), extended animations (fade-in, pulse-glow), and OKLCH color mappings.",
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup, ThemeProvider wrapper, and routes for Landing, Chat, About, and Privacy pages.",
+  "frontend/src/components/AppLayout.tsx": "Shared layout component with responsive header navigation, mobile menu, footer with social links, and Caffeine.ai attribution.",
+  "frontend/src/pages/LandingPage.tsx": "Landing page featuring KairoNova hero section with \"Developed by Kairav\" badge, feature cards, and CTAs to start chatting.",
+  "frontend/src/pages/ChatPage.tsx": "ChatGPT-like chat interface with message timeline, typing indicators, keyboard-accessible input (Enter to send, Shift+Enter for newline), and demo bot integration.",
+  "frontend/src/pages/AboutPage.tsx": "About page describing KairoNova's mission, differentiators, and \"Developed by Kairav\" attribution with feature highlights.",
+  "frontend/src/pages/PrivacyDisclaimerPage.tsx": "Privacy and disclaimer page stating demo nature, no professional advice, data handling, acceptable use, and contact information.",
+  "frontend/src/hooks/useChatApi.ts": "React Query hooks for loading chat history and sending messages with automatic cache invalidation.",
+  "frontend/src/hooks/useChatSession.ts": "Hook managing chat session initialization and localStorage persistence for session continuity.",
+  "frontend/src/lib/demoBot.ts": "Deterministic demo bot reply generator with context-aware responses for greetings, help, thanks, and general conversation.",
+  "frontend/src/main.tsx": "Application entry point with QueryClient configuration (retry, staleTime settings) and provider setup."
+}

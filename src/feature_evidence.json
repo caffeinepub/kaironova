@@ -1,0 +1,127 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-coherent-kaironova-brand-identity-across-the-website-including-a-consistent-visual-theme-colors-typography-spacing-and-component-styling-suitable-for-a-premium-ai-chatbot-brand-avoid-blue-purple-as-primary-colors",
+      "featureTitle": "Create a coherent KairoNova brand identity across the website, including a consistent visual theme (colors, typography, spacing, and component styling) suitable for a premium AI chatbot brand; avoid blue/purple as primary colors.",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-public-landing-page-for-the-kaironova-chatbot-brand-that-clearly-presents-product-name-kaironova-tagline-brief-description-and-creator-attribution-developed-by-kairav-with-calls-to-action-that-navigate-to-the-chat-experience",
+      "featureTitle": "Implement a public Landing page for the KairoNova chatbot brand that clearly presents: product name “KairoNova”, tagline, brief description, and creator attribution “Developed by Kairav”, with calls-to-action that navigate to the Chat experience.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/LandingPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-chat-page-that-provides-a-chatgpt-like-ui-message-list-user-input-box-send-button-loading-indicator-and-supports-an-on-chain-demo-chatbot-response-flow-without-using-any-external-ai-llm-apis-e-g-simple-rules-based-responses-canned-replies-or-scripted-behaviors",
+      "featureTitle": "Implement a Chat page that provides a ChatGPT-like UI (message list, user input box, send button, loading indicator) and supports an on-chain demo chatbot response flow without using any external AI/LLM APIs (e.g., simple rules-based responses, canned replies, or scripted behaviors).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/hooks/useChatSession.ts",
+        "frontend/src/lib/demoBot.ts",
+        "frontend/src/pages/ChatPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-basic-informational-pages-and-navigation-about-describing-kaironova-and-attribution-to-kairav-and-privacy-disclaimer-stating-this-is-a-demo-chatbot-experience-and-does-not-provide-professional-advice",
+      "featureTitle": "Add basic informational pages and navigation: About (describing KairoNova and attribution to Kairav), and Privacy/Disclaimer (stating this is a demo chatbot experience and does not provide professional advice).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/AppLayout.tsx",
+        "frontend/src/pages/AboutPage.tsx",
+        "frontend/src/pages/PrivacyDisclaimerPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-use-react-query-for-chat-data-flow-loading-history-sending-messages-receiving-bot-replies-with-appropriate-loading-error-ui-states-so-the-chat-remains-responsive-and-failures-are-visible-to-the-user",
+      "featureTitle": "Use React Query for chat data flow (loading history, sending messages, receiving bot replies) with appropriate loading/error UI states so the chat remains responsive and failures are visible to the user.",
+      "files": [
+        "frontend/src/hooks/useChatApi.ts",
+        "frontend/src/main.tsx",
+        "frontend/src/pages/ChatPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-basic-seo-accessibility-essentials-meaningful-page-titles-semantic-headings-and-keyboard-accessible-chat-input-controls",
+      "featureTitle": "Add basic SEO/accessibility essentials: meaningful page titles, semantic headings, and keyboard-accessible chat input controls.",
+      "files": [
+        "frontend/src/pages/AboutPage.tsx",
+        "frontend/src/pages/ChatPage.tsx",
+        "frontend/src/pages/LandingPage.tsx",
+        "frontend/src/pages/PrivacyDisclaimerPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-12T13:17:32.640Z",
+  "summary": "Most requested pages, routing, branding theme, and the demo chat flow with React Query hooks were added. Key gaps are around backend message attribution for bot vs user and user-visible error handling for send-message failures. There are also some extra footer/social/attribution additions not requested.",
+  "missing_requirements": [
+    {
+      "id": "REQ-3",
+      "requirement": "Chat page supports a ChatGPT-like UI with bot response flow (user + bot messages)",
+      "reason": "The frontend generates a bot reply but persists it by calling the same `sendMessage` backend method that records `sender : Principal` as the caller. There is no evidence of a backend field/flag to mark messages as bot vs user, so the conversation cannot reliably render distinct user/bot roles in a ChatGPT-like timeline.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/pages/ChatPage.tsx"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "requirement": "React Query mutations show visible error UI states (no silent failures)",
+      "reason": "Chat history query includes loading/error UI, but send-message failures are only logged to console in the chat send handler; there is no evidence of an on-screen error message/toast for message send or bot-reply send failures.",
+      "evidence": [
+        "frontend/src/pages/ChatPage.tsx",
+        "frontend/src/hooks/useChatApi.ts"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Footer social links and an additional attribution ('Caffeine.ai attribution')",
+      "reason": "The BuildRequest does not ask for social media icons/links or any attribution other than 'Developed by Kairav'.",
+      "evidence": [
+        "frontend/src/components/AppLayout.tsx",
+        "frontend-file-summaries.txt"
+      ]
+    },
+    {
+      "description": "Added theme switching infrastructure (next-themes ThemeProvider)",
+      "reason": "A light/dark theme provider was added but not explicitly requested in the BuildRequest requirements.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.66,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/AppLayout.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useChatApi.ts",
+    "frontend/src/hooks/useChatSession.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/index.css",
+    "frontend/src/lib/demoBot.ts",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/AboutPage.tsx",
+    "frontend/src/pages/ChatPage.tsx",
+    "frontend/src/pages/LandingPage.tsx",
+    "frontend/src/pages/PrivacyDisclaimerPage.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

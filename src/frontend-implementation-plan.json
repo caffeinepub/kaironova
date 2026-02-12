@@ -1,0 +1,174 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "KairoNova AI Chatbot Website (branding + landing + demo chat) — Frontend Plan",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Establish a premium KairoNova visual theme (non blue/purple primary) applied consistently across all pages and components.",
+      "acceptanceCriteria": [
+        "All pages share a consistent theme (color palette, typography, and layout rules).",
+        "Primary theme does not rely on blue/purple as the main brand colors.",
+        "Site looks intentional and polished on both mobile and desktop."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Create global styles and Tailwind layers for the KairoNova brand identity (premium typography, spacing, surface styles, and a non-blue/purple primary palette via CSS variables used by the theme). Use existing Tailwind/shadcn token approach; do not modify any files under frontend/src/components/ui. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Adjust Tailwind theme extensions (fonts, radius, shadows, container defaults) to support a premium KairoNova look and ensure the palette maps to the CSS variables defined in frontend/src/index.css (keeping primary away from blue/purple). Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Ensure baseline branding metadata aligns with KairoNova (title defaults and language already set) and supports a polished presentation. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Add a public Landing page presenting KairoNova name, tagline, description, attribution, and a CTA to the Chat experience.",
+      "acceptanceCriteria": [
+        "Landing page displays “KairoNova” prominently.",
+        "Landing page includes visible text “Developed by Kairav”.",
+        "A clear “Start Chat” (or equivalent) CTA navigates to the chat screen."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/LandingPage.tsx",
+          "operation": "create",
+          "description": "Create the Landing page with prominent “KairoNova”, an English tagline + brief description, visible attribution “Developed by Kairav”, and a clear “Start Chat” CTA linking to the chat route. Use shadcn-ui components (e.g., Button/Card) for consistent premium styling. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the app router and wire the Landing page as the default public route; include navigation wiring to the Chat experience from the Landing CTA. Use React Router for route handling and a shared layout wrapper. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Implement a ChatGPT-like Chat page UI with message timeline, composer, send action, and a demo bot reply flow without external AI/LLM APIs.",
+      "acceptanceCriteria": [
+        "User can enter a message and see it appear in the conversation timeline.",
+        "App produces a bot response for each user message without calling external AI services.",
+        "UI shows a loading/typing state while generating the bot reply.",
+        "Conversation remains usable after multiple turns (at least 10 messages)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ChatPage.tsx",
+          "operation": "create",
+          "description": "Create a Chat page with a ChatGPT-like layout (scrolling message list, user/bot bubbles, input + send button, and a visible typing/loading indicator). Keep all user-facing text in English and ensure the UI remains usable for 10+ messages. Use shadcn-ui components (e.g., Input/Textarea/Button/ScrollArea) for accessible, consistent controls. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useChatSession.ts",
+          "operation": "create",
+          "description": "Add a small hook to manage a simple current session/device context (e.g., persist a sessionId in localStorage and initialize it on first visit) to support chat continuity in the UI. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/lib/demoBot.ts",
+          "operation": "create",
+          "description": "Add a deterministic, rules-based/canned reply generator (no external calls) that can be used to display demo bot replies/typing behavior in the UI when needed. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the Chat page route and ensure navigation to/from Landing/About/Privacy is available through the shared layout. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Add About and Privacy/Disclaimer informational pages plus navigation links to Landing, Chat, About, and Privacy/Disclaimer.",
+      "acceptanceCriteria": [
+        "Top-level navigation (or footer links) provides access to Landing, Chat, About, and Privacy/Disclaimer.",
+        "About page includes “Developed by Kairav”.",
+        "Privacy/Disclaimer page is reachable and readable on mobile."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/AboutPage.tsx",
+          "operation": "create",
+          "description": "Create an About page describing KairoNova (demo AI chatbot website) and include the visible attribution “Developed by Kairav”. Use semantic headings and readable typography. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/PrivacyDisclaimerPage.tsx",
+          "operation": "create",
+          "description": "Create a Privacy/Disclaimer page stating the chat is a demo experience and does not provide professional advice; ensure mobile readability with a clear layout and semantic headings. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/AppLayout.tsx",
+          "operation": "create",
+          "description": "Create a shared layout with top navigation and/or footer links to Landing, Chat, About, and Privacy/Disclaimer, styled consistently with the KairoNova theme. Use shadcn-ui components (e.g., Button/Separator) as appropriate. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Register routes for About and Privacy/Disclaimer pages and wrap routed views with the shared AppLayout to ensure consistent navigation across the site. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Use React Query for chat history loading and sending messages with clear loading/error UI states.",
+      "acceptanceCriteria": [
+        "Chat history query has loading and error states.",
+        "Send message action is implemented as a mutation with optimistic or clearly staged UI updates.",
+        "Errors are presented in the UI in English (no silent failures)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useChatApi.ts",
+          "operation": "create",
+          "description": "Create React Query hooks for chat history and sending messages using the existing actor hook pattern (useActor) and backend interface (getMessages/sendMessage/startSession). Include loading/error handling and query invalidation/refetch strategy. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/ChatPage.tsx",
+          "operation": "modify",
+          "description": "Integrate the React Query hooks to load history on page load (show loading skeleton/state and error message in English), send messages via mutation (optimistic/staged UI updates), and display a clear failure state when actions fail. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/main.tsx",
+          "operation": "modify",
+          "description": "Configure the QueryClient defaults (e.g., retry/backoff behavior suitable for chat UX) to keep the chat responsive and make failures visible, while preserving the existing QueryClientProvider setup. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Add basic SEO and accessibility: page titles, semantic headings, and keyboard-accessible chat controls.",
+      "acceptanceCriteria": [
+        "Each page sets a sensible document/page title including “KairoNova”.",
+        "Chat input can be focused and submitted via keyboard.",
+        "Primary headings use semantic h1/h2 structure."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/LandingPage.tsx",
+          "operation": "modify",
+          "description": "Set document title to include “KairoNova” and ensure semantic heading structure (h1 for KairoNova, h2 for sections). Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/ChatPage.tsx",
+          "operation": "modify",
+          "description": "Ensure chat composer is keyboard-accessible (focusable input/textarea, Enter-to-send with Shift+Enter for newline if multiline) and set a sensible document title including “KairoNova”. Ensure semantic headings for the page structure. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/AboutPage.tsx",
+          "operation": "modify",
+          "description": "Set document title including “KairoNova” and use semantic headings for readability and accessibility. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/PrivacyDisclaimerPage.tsx",
+          "operation": "modify",
+          "description": "Set document title including “KairoNova” and use semantic headings; ensure content is readable on mobile (line length, spacing). Verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}

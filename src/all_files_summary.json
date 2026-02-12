@@ -1,0 +1,22 @@
+{
+  "backend/main.mo": "Defines chat sessions and messages with functions to start a session, send messages, and retrieve session messages using List-based storage.",
+  "feature_evidence.json": "Lists feature evidence mappings connecting features to relevant files, components, tests, and confidence levels.",
+  "frontend-file-summaries.txt": "Provides prewritten one-line summaries for key frontend files to support build planning.",
+  "frontend/index.css": "Implements Tailwind base layers and OKLCH design tokens for light and dark themes across the app.",
+  "frontend/index.html": "Basic HTML entry point mounting the React app and loading main.tsx.",
+  "frontend/src/App.tsx": "Sets up TanStack Router routes and wraps the app with ThemeProvider and AppLayout.",
+  "frontend/src/components/AppLayout.tsx": "Provides the site-wide layout with header navigation, mobile menu, and footer.",
+  "frontend/src/hooks/useActor.ts": "Creates and manages a backend actor tied to Internet Identity with React Query caching and invalidation.",
+  "frontend/src/hooks/useChatApi.ts": "React Query hooks for fetching chat history and sending messages via the backend actor.",
+  "frontend/src/hooks/useChatSession.ts": "Initializes and persists a chat session ID in localStorage and syncs it with the backend.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides a React context and provider for managing Internet Identity authentication, including login, logout, and status handling.",
+  "frontend/src/index.css": "Defines Tailwind base styles and custom CSS variables for light and dark theme color palettes.",
+  "frontend/src/lib/demoBot.ts": "Implements a simple demo chatbot that generates canned or contextual replies based on user message content.",
+  "frontend/src/main.tsx": "Bootstraps the React app with React Query and the Internet Identity provider, then renders the root App component.",
+  "frontend/src/pages/AboutPage.tsx": "Renders the About page with mission, features, technology details, and project background for KairoNova.",
+  "frontend/src/pages/ChatPage.tsx": "Implements the chat UI, handling message input, history loading, bot replies, and send interactions.",
+  "frontend/src/pages/LandingPage.tsx": "Displays the landing page with a hero section, feature highlights, and navigation to chat or learn more.",
+  "frontend/src/pages/PrivacyDisclaimerPage.tsx": "React page that sets the document title and displays KairoNova’s privacy, disclaimer, and acceptable‑use information using cards and alerts.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration defining content paths, theme extensions, custom colors, fonts, shadows, and plugin usage.",
+  "project_state.json": "Project metadata and requirements describing the KairoNova website’s features, branding goals, pages, and pending backend tasks."
+}
